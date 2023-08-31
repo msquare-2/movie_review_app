@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import '../styles/ReviewList.css'
+// import '../styles/ReviewList.css'
 
 function ReviewList({ reviews, setReviews }) {
   const handleVote = async (id, voteType) => {
@@ -23,17 +23,19 @@ function ReviewList({ reviews, setReviews }) {
   };
 
   return (
-    <div>
+    <div className="container mt-4">
       <h2>Movie Reviews</h2>
-      <ul>
+      <ul className="list-unstyled">
         {reviews.map((review) => (
-          <li key={review.id}>
+          <li key={review.id} className="border p-3 mb-3">
             <p>{review.text}</p>
-            <p>Sentiment: {review.sentiment}</p>
-            <p>Upvotes: {review.upvotes}</p>
-            <p>Downvotes: {review.downvotes}</p>
-            <button onClick={() => handleVote(review.id, 'upvote')}>Upvote</button>
-            <button onClick={() => handleVote(review.id, 'downvote')}>Downvote</button>
+            <p className="mb-0">Sentiment: {review.sentiment}</p>
+            <p className="mb-0">Upvotes: {review.upvotes}</p>
+            <p className="mb-0">Downvotes: {review.downvotes}</p>
+            <div className="d-flex justify-content-between mt-2">
+              <button className="btn btn-outline-success" onClick={() => handleVote(review.id, 'upvote')}>Upvote</button>
+              <button className="btn btn-outline-danger" onClick={() => handleVote(review.id, 'downvote')}>Downvote</button>
+            </div>
           </li>
         ))}
       </ul>

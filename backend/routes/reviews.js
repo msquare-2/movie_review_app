@@ -5,11 +5,13 @@ const router = express.Router();
 const cohere = require("cohere-ai");
 const { text } = require("body-parser");
 const fs = require('fs');
+const path = require('path');
 cohere.init("2AsvwdFcJ3zPd8tRkbbDvGQ6D5WYEoasw3XvVjva");
 
 // Placeholder for review data
 let reviews = [];
-const sentimentExamples = JSON.parse(fs.readFileSync('./data/sentimentExamples.json', 'utf-8'));
+const sentimentExamplesPath = path.join(__dirname, '../data', 'sentimentExamples.json');
+const sentimentExamples = JSON.parse(fs.readFileSync(sentimentExamplesPath, 'utf-8'));
 
 // Endpoint for submitting a review
 router.post("/submit", async(req, res) => {
