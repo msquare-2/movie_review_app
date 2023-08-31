@@ -2,6 +2,16 @@
 
 Welcome to the Movie Review Web Application! This application allows users to submit movie reviews, perform sentiment analysis on the reviews, and engage in upvoting and downvoting of reviews.
 
+## Limitation
+
+- The application currently relies on placeholder sentiment analysis data from a JSON file, which limits the accuracy of sentiment classification and doesn't reflect real-time sentiment changes.
+
+## Future Features
+
+- Given more time, I would implement user authentication to allow users to have individual profiles, track their own reviews, and prevent abuse of the upvote/downvote system.
+- Additionally, I would explore integrating a more advanced sentiment analysis service for accurate and dynamic sentiment analysis.
+
+
 ## Table of Contents
 
 - [Features](#features)
